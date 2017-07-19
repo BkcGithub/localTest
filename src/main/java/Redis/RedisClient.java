@@ -1,20 +1,11 @@
 package Redis;
 
-import redis.clients.jedis.JedisPoolConfig;
-import redis.clients.jedis.JedisShardInfo;
-import redis.clients.jedis.ShardedJedis;
-import redis.clients.jedis.ShardedJedisPool;
-import test.Redis.Redis;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by bkc on 2017/6/21.
  */
 public class RedisClient {
     //切片客户端
-    private static ShardedJedis sharedJedis;
+   /* private static ShardedJedis sharedJedis;
     //切片连接池
     private static ShardedJedisPool shardedJedisPool;
 
@@ -49,5 +40,5 @@ public class RedisClient {
         initShardedPoll();
         show();
 
-    }
+    }*/
 }

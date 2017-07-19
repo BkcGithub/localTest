@@ -5,6 +5,7 @@ import org.apache.commons.collections.CollectionUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,6 +22,21 @@ import java.util.Set;
 public class Test {
 
     public static void main(String[] args) {
+
+        String[] s = {"aa", "sss", "ddd", "fff", "ggg", "hhhh"};
+        int[] a = {3, 1, 2};
+
+        List<String> list = Arrays.asList(s);
+
+        int intLen = a.length;
+
+        int index = 0;
+        for (int i = 0; i < intLen; i++) {
+            System.out.println(list.subList(index,index + a[i]));;
+            index = a[i];
+        }
+
+
         /*JSONObject object = new JSONObject();
         Map<String, List<String>> map =new HashMap<String,List<String>>();
         System.out.println(map.get("ss"));
