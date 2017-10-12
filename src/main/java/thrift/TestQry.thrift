@@ -5,7 +5,7 @@ struct QryResult
 
     2:string msg;
 }
-service TsetQry
+service TestQry
 {
     QryResult qryTest(1:i32 qryCode);
 }

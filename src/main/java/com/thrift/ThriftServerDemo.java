@@ -1,6 +1,5 @@
 package com.thrift;
 
-import com.thrift.generate.TsetQry;
 import org.apache.thrift.TProcessorFactory;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.server.TNonblockingServer;
@@ -17,7 +16,7 @@ public class ThriftServerDemo {
         try {
             TNonblockingServerSocket socket = new TNonblockingServerSocket(DEFAULT_PORT);
 
-            TsetQry.Processor processor = new TsetQry.Processor(new QueryImpl());
+            com.thrift.TestQry.Processor processor = new com.thrift.TestQry.Processor(new QueryImpl());
 
             TNonblockingServer.Args arg = new TNonblockingServer.Args(socket);
 

@@ -1,12 +1,10 @@
 package com.thrift;
 
-import com.thrift.generate.QryResult;
-import com.thrift.generate.TsetQry;
 import org.apache.thrift.TException;
 
-public class QueryImpl implements TsetQry.Iface {
-    @Override public QryResult qryTest(int qryCode) throws TException {
-        QryResult result = new QryResult();
+public class QueryImpl implements com.thrift.TestQry.Iface {
+    @Override public com.thrift.QryResult qryTest(int qryCode) throws TException {
+        com.thrift.QryResult result = new com.thrift.QryResult();
 
 
         if (qryCode == 1) {
