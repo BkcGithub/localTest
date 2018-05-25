@@ -1,8 +1,13 @@
 package test;
 
 import com.alibaba.fastjson.JSONObject;
+import it.sauronsoftware.jave.Encoder;
+import it.sauronsoftware.jave.EncoderException;
+import it.sauronsoftware.jave.MultimediaInfo;
 import org.apache.commons.collections.CollectionUtils;
 
+import java.io.File;
+import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -20,10 +25,40 @@ import java.util.Set;
  * Created by bkc on 25/04/2017.
  */
 public class Test {
+    public static Object getProperty(Object owner, String fieldName) throws NoSuchFieldException, IllegalAccessException {
+        Class ownerClass = owner.getClass();
+
+        Field field = ownerClass.getField(fieldName);
+
+        Object property = field.get(owner);
+
+        return property;
+
+    }
+
+    static void functionA() {
+
+    }
 
     public static void main(String[] args) {
 
-        String[] s = {"aa", "sss", "ddd", "fff", "ggg", "hhhh"};
+        try {
+            System.out.println(getProperty(new Test(), "str"));
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        Integer i = 127;
+
+        System.out.println(Integer.reverse(i));
+
+        String str = "a0123456bkc123";
+
+        System.out.println(str.codePointAt(0));
+        System.out.println(str.hashCode());
+        /*String[] s = {"aa", "sss", "ddd", "fff", "ggg", "hhhh"};
         int[] a = {3, 1, 2};
 
         List<String> list = Arrays.asList(s);
@@ -34,7 +69,7 @@ public class Test {
         for (int i = 0; i < intLen; i++) {
             System.out.println(list.subList(index,index + a[i]));;
             index = a[i];
-        }
+        }*/
 
 
         /*JSONObject object = new JSONObject();
@@ -61,7 +96,7 @@ public class Test {
 */
 
 
-        Calendar calstart = Calendar.getInstance();
+        /*Calendar calstart = Calendar.getInstance();
         SimpleDateFormat DATEFORMAT = new SimpleDateFormat("yyyy-MM-dd");
         try {
             calstart.setTime(DATEFORMAT.parse("2017-07-05"));
@@ -75,7 +110,15 @@ public class Test {
         }
         calstart.add(Calendar.DATE, -w);
 
-        System.out.println(calstart.getTime());
+        System.out.println(calstart.getTime());*/
+
+        Integer.valueOf(1);
+        int i6 = 128;
+        Integer i7 = 128;
+        System.out.println(i6 == i7);
+
+
+
 
     }
 }
