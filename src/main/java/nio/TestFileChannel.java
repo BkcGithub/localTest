@@ -9,6 +9,7 @@ import java.nio.channels.FileChannel;
 public class TestFileChannel {
 
     public static void main(String[] args) {
+        System.out.println(TestFileChannel.class.getSimpleName());
         try {
             RandomAccessFile file =
                 new RandomAccessFile("/Users/bkc/Desktop/activity_old_belt_new_user_action.sql", "rw");

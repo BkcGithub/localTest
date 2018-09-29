@@ -15,7 +15,7 @@ public class Redis {
         //172.16.7.92
 
 
-        Jedis jedis = new Jedis("42.62.10.135", 9736);
+        Jedis jedis = new Jedis("127.0.0.1", 6379);
 
         Set<String> keys = jedis.keys("*");
         for (String key : keys) {
